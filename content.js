@@ -24,3 +24,38 @@ if (domain.includes('youtube')) {
         }
     }, 100);
 }
+
+// Pornhub
+if (domain.includes('pornhub')) {
+    let id2 = setInterval(() => {
+        // Remove elements with the class "bottomNav clearfix"
+        const bottomNav = document.querySelector('.bottomNav.clearfix');
+        if (bottomNav) {
+            bottomNav.remove();
+            console.log('Removed element with class "bottomNav clearfix"');
+        }
+
+        // Remove elements with the class "container clearfix notPremium"
+        const mobileContainer = document.getElementById('mobileContainer');
+        if (mobileContainer) {
+            mobileContainer.remove();
+            console.log('Removed element with id "mobileContainer"');
+
+            // Remove elements with the class "adContainer clearfix noBottom"
+            const adContainer = document.querySelector('.adContainer.clearfix.noBottom');
+            if (adContainer) {
+                adContainer.remove();
+                console.log('Removed element with class "adContainer clearfix noBottom"');
+            }
+
+            // Remove elements with the class "adContainer clearfix middleAdContainer"
+            const middleAdContainer = document.querySelector('.adContainer.clearfix.middleAdContainer');
+            if (middleAdContainer) {
+                middleAdContainer.remove();
+                console.log('Removed element with class "adContainer clearfix middleAdContainer"');
+            }
+        }
+
+        clearInterval(id2);
+    }, 100);
+}
