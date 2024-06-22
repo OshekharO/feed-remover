@@ -32,6 +32,9 @@ const checkDomain = () => {
   }
 };
 
+// Initial call to checkDomain
+checkDomain();
+
 // Use MutationObserver instead of setInterval
 const observer = new MutationObserver(checkDomain);
 observer.observe(document.body, { childList: true, subtree: true });
